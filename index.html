@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Results summary component | Assignment 4</title>
-  <link rel="stylesheet" href="style.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-</head>
-<body>
+    <title>Frontend Mentor | Results summary component | Assignment 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <main class="result-card">
+        <section class="result-score">
+          <h2>Your Result</h2>
+          <div class="score-circle">
+            <p class="score">76</p>
+            <p class="out-of">of 100</p>
+          </div>
+          <h3>Great</h3>
+          <p class="description">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </section>
 
-  Your Result
-  76
-  of 100
+        <section class="summary">
+          <h2>Summary</h2>
+          <div class="category reaction">
+            <div class="label">
+              <img src="./assets/images/icon-reaction.svg" alt="" />
+              <p>Reaction</p>
+            </div>
+            <p><strong>80</strong> <span>/ 100</span></p>
+          </div>
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+          <div class="category memory">
+            <div class="label">
+              <img src="./assets/images/icon-memory.svg" alt="" />
+              <p>Memory</p>
+            </div>
+            <p><strong>92</strong> <span>/ 100</span></p>
+          </div>
 
-  Reaction
-  80 / 100
+          <div class="category verbal">
+            <div class="label">
+              <img src="./assets/images/icon-verbal.svg" alt="" />
+              <p>Verbal</p>
+            </div>
+            <p><strong>61</strong> <span>/ 100</span></p>
+          </div>
 
-  Memory
-  92 / 100
+          <div class="category visual">
+            <div class="label">
+              <img src="./assets/images/icon-visual.svg" alt="" />
+              <p>Visual</p>
+            </div>
+            <p><strong>72</strong> <span>/ 100</span></p>
+          </div>
 
-  Verbal
-  61 / 100
+          <button class="button-continue">Continue</button>
+        </section>
+      </main>
 
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/Khin-KHTO">Khin</a>.
+      </div>
+    </div>
+  </body>
 </html>

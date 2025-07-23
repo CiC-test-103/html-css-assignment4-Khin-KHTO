@@ -1,12 +1,14 @@
 /** Variable Imports **/
-@import './variables.css';
+@import "./variables.css";
 
 /**
   CSS Reset
   Source: https://www.joshwcomeau.com/css/custom-css-reset/
 **/
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /* 2. Remove default margin */
@@ -20,34 +22,241 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 /* 5. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /* 6. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 /* 8. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 /** Your CSS Below **/
 
+html,
+body {
+  height: 100%;
+  margin: 1rem;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fs-base), sans-serif;
+  background-color: var(--clr-paleBlue);
+}
+
+.page {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-white);
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  max-width: 736px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.result-score,
+.summary {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-score {
+  background: linear-gradient(
+    var(--gra-lightSlateBlue),
+    var(--gra-lightRoyalBlue) 50%
+  );
+  color: var(--clr-white);
+  text-align: center;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.result-score h2 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.score-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(hsl(241, 81%, 54%) 50%, hsl(241, 52%, 48%) 95%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.score-circle .score {
+  font-size: 2.5rem;
+  font-weight: var(--fw-black);
+  margin-top: 0;
+}
+
+.score-circle .out-of {
+  font-size: 0.8rem;
+  color: var(--clr-lightLavender);
+}
+
+.result-score h3 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.result-score .description {
+  font-size: 1rem;
+  color: var(--clr-lightLavender);
+  margin-top: 1rem;
+}
+
+.summary h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--clr-darkGrayBlue);
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.reaction {
+  background-color: hsla(0, 100%, 67%, 0.1);
+  color: var(--clr-lightRed);
+}
+
+.memory {
+  background-color: hsla(39, 100%, 56%, 0.1);
+  color: var(--clr-orangeYellow);
+}
+
+.verbal {
+  background-color: hsla(166, 100%, 37%, 0.1);
+  color: var(--clr-greenTeal);
+}
+
+.visual {
+  background-color: hsla(234, 85%, 45%, 0.1);
+  color: var(--clr-cobaltBlue);
+}
+
+.category img {
+  width: 20px;
+  margin-right: 1rem;
+}
+
+.category strong {
+  color: var(--clr-darkGrayBlue);
+  font-weight: var(--fw-bold);
+}
+
+span {
+  color: var(--clr-lightLavender);
+  font-weight: bold;
+}
+
+.button-continue {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--clr-darkGrayBlue);
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+}
+
+@media (min-width: 768px) {
+  .result-card {
+    flex-direction: row;
+  }
+
+  .result-score,
+  .summary {
+    flex: 1;
+  }
+
+  .result-score {
+    border-radius: 2rem;
+  }
+
+  .summary {
+    padding: 1 3rem;
+  }
+}
+
 /** Attribution CSS **/
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  display: flex;
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
